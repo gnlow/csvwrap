@@ -1,0 +1,20 @@
+{
+  "name": "csvwrap",
+  "version": "0.1.0",
+  "description": "Simple tool: CSV -> JS package",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnlow/csvwrap.git"
+  },
+  "keywords": [],
+  "author": "Gnlow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnlow/csvwrap/issues"
+  },
+  "homepage": "https://github.com/gnlow/csvwrap#readme"
+}
