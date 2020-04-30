@@ -4,6 +4,7 @@ const fs = require("fs")
 const util = require("util")
 
 const read = util.promisify(fs.readFile)
+const write = util.promisify(fs.writeFile)
 
 const parse = csv => {
     let items = csv.split("\n")
@@ -25,5 +26,9 @@ module.exports = async () => {
 
         const files = await globby("**/*.csv")
         const data = await Promise.all(files.map(file => read(file, "utf-8")))
-        console.log(data.map((datum, i) => ({file: files[i] ,data: parse(datum)}) ))
+        data.forEach((datum, i) => {
+            write(files[i].replace(/(.*)\.csv/, "$1.js"), 
+                `module.exports = ${JSON.stringify(parse(datum))}`
+            )
+        } )
 }
