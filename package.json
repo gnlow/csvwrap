@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "description": "Simple tool: CSV -> JS package",
   "main": "index.js",
-  "scripts": {
-    
+  "preferGlobal": true,
+  "bin": {
+    "csvwrap": "bin/csvwrap"
   },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gnlow/csvwrap.git"
@@ -16,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/gnlow/csvwrap/issues"
   },
-  "homepage": "https://github.com/gnlow/csvwrap#readme"
+  "homepage": "https://github.com/gnlow/csvwrap#readme",
+  "dependencies": {
+    "commander": "^5.1.0"
+  }
 }
