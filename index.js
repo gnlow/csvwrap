@@ -20,7 +20,7 @@ const parse = csv => {
 
 module.exports = async () => {
     program
-        .option("-x, --xx [word]", "X")
+        .version("0.1.0")
 
         .parse(process.argv)
 
