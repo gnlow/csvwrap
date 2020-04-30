@@ -1,4 +1,4 @@
-# csvwrap
+# csvwrap <a href="https://www.npmjs.com/package/csvwrap"><img src="https://badgen.net/npm/v/csvwrap"></img></a>
 Simple CLI tool: CSV -> JS
 ## Install
 ```sh
