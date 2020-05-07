@@ -21,7 +21,7 @@ Baz, 11
 ### Output
 data.js
 ```js
-module.exports = [{"Name":"Foo","Age":"10"},{"Name":"Bar","Age":"20"},{"Name":"Baz","Age":"11"}]
+module.exports={"label":["Name","Age"],"data":[["Foo","10"],["Bar","20"],["Baz","11"]]}
 ```
 ## TODO
 - [ ] Custom separator
