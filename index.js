@@ -7,7 +7,7 @@ const read = util.promisify(fs.readFile)
 const write = util.promisify(fs.writeFile)
 
 const parse = csv => {
-    let items = csv.split("\n")
+    let items = csv.trim().split("\n")
     let label = items.splice(0, 1)[0].split(",").map(x => x.trim())
     return {label, data: items.map(item => item.split(",").map(x => x.trim()))}
 }
