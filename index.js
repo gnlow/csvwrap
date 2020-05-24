@@ -30,7 +30,7 @@ const target = {
 
 module.exports = async () => {
     program
-        .version("0.2.0")
+        .version("0.2.2")
         .option("-t, --target <target>", "module export type (require or es)")
         .option("-n, --numberize", "numberize data")
         .parse(process.argv)
