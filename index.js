@@ -12,17 +12,22 @@ const parse = csv => {
     return {label, data: items.map(item => item.split(",").map(x => x.trim()))}
 }
 
+const target = {
+    require: input => `module.exports=${input}`,
+    es: input => `export default ${input}`,
+}
+
 module.exports = async () => {
     program
         .version("0.2.0")
-
+        .option("-t, --target <target>", "module export type (require or es)")
         .parse(process.argv)
 
         const files = await globby("**/*.csv")
         const data = await Promise.all(files.map(file => read(file, "utf-8")))
         data.forEach((datum, i) => {
             write(files[i].replace(/(.*)\.csv/, "$1.js"), 
-                `module.exports=${JSON.stringify(parse(datum))}`
+                target[program.target](JSON.stringify(parse(datum)))
             )
         } )
 }
