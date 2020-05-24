@@ -39,7 +39,7 @@ module.exports = async () => {
         const data = await Promise.all(files.map(file => read(file, "utf-8")))
         data.forEach((datum, i) => {
             write(files[i].replace(/(.*)\.csv/, "$1.js"), 
-                target[program.target](JSON.stringify(parse(datum, program.numberize)))
+                target[program.target || "require"](JSON.stringify(parse(datum, program.numberize)))
             )
         } )
 }
